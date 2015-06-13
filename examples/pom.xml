@@ -1,0 +1,35 @@
+<project 
+  xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>reactor</groupId>
+  <artifactId>reactor</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>core/average-word-length</module>
+    <module>core/kmeans-xy</module>
+    <module>core/line-count</module>
+    <module>core/movie-genres-bcst</module>
+    <module>core/movie-genres-join</module>
+    <module>core/movie-genres-pass</module>
+    <module>core/page-rank</module>
+    <module>core/spark-app</module>
+    <module>core/spark-config</module>
+    <module>core/target-lines</module>
+    <module>core/word-count</module>
+    <module>graphx/page-rank-gx</module>
+    <module>mllib/column-stats</module>
+    <module>mllib/movie-lens-als</module>
+    <module>sql/people-test</module>
+    <module>streaming/net-catcher</module>
+    <module>streaming/request-count-batch</module>
+    <module>streaming/request-count-partition</module>
+    <module>streaming/request-count-state</module>
+    <module>streaming/request-count-window</module>
+  </modules>
+
+</project>
