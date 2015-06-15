@@ -1,0 +1,19 @@
+<project 
+  xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <parent>
+    <groupId>my.spark.examples</groupId>
+    <artifactId>my-spark-examples</artifactId>
+    <version>1.0</version>
+    <relativePath>../../parent.xml</relativePath>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>my.spark.mllib</groupId>
+  <artifactId>ice-cream-correlation</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+</project>
