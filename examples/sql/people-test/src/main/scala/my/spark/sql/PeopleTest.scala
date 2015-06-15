@@ -8,13 +8,17 @@ case class Person(id: Int, fname: String, lname: String, email: String, country:
 
 object PeopleTest {
   def main(args: Array[String]) {
+    if (args.length != 1) {
+      println("Usage: PeopleTest people.csv")
+      System.exit(1)
+    }
 
     val sc = new SparkContext()
     val sqlContext = new SQLContext(sc)
 
     import sqlContext.implicits._
     
-    val people = sc.textFile("people.csv").map(_.split(",")).map(f => Person(f(0)toInt,f(1),f(2),f(3),f(4),f(5)))
+    val people = sc.textFile(args(0)).map(_.split(",")).map(f => Person(f(0)toInt,f(1),f(2),f(3),f(4),f(5)))
     people.toDF().registerTempTable("people")
     
     println("select * from people limit 5")
