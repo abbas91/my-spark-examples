@@ -22,10 +22,10 @@
     <module>core/target-lines</module>
     <module>core/word-count</module>
     <module>graphx/page-rank-gx</module>
-    <module>mllib/column-stats</module>
-    <module>mllib/ice-cream-correlation</module>
+    <!--<module>mllib/column-stats</module>-->
+    <!--<module>mllib/ice-cream-correlation</module>-->
     <module>mllib/movie-lens-als</module>
-    <module>sql/people-test</module>
+    <!--<module>sql/people-test</module>-->
     <module>streaming/net-catcher</module>
     <module>streaming/request-count-batch</module>
     <module>streaming/request-count-partition</module>
