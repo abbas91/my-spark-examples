@@ -41,6 +41,9 @@ object IceCreamCorrelation {
     val v12 = Vectors.dense(17.2, 408.0)
     val data: RDD[Vector] = sc.parallelize(Array(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12))
 
+    data.collect().foreach(println)
+
+    println()
     println("Matrix using Pearson:")
     println(Statistics.corr(data, "pearson").toString())
     println()
