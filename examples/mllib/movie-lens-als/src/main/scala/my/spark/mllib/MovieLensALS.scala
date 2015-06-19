@@ -69,7 +69,7 @@ object MovieLensALS {
     println("RegConst:   " + regConst)
     println("RMSE:       " + rmse)
     
-    // We know the actual ratings. Let's ignore those and see what the model predicts they should be.
+    // We know the actual ratings for the specified user. Let's ignore those and see what the model predicts they should be.
     val uPred: RDD[Rating] = model.predict(uActual.map(x => (x.user, x.product)))
     println(f"\nSample of User $userId predicted ratings:")
     uPred.takeSample(false,1).foreach(x => println(x.user + "\t" + x.product + "\t" + x.rating))
