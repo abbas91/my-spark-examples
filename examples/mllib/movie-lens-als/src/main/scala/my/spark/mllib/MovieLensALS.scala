@@ -51,7 +51,7 @@ object MovieLensALS {
     println("\nSample of MatrixFactorizationModel records (productId, feature array):")
     model.productFeatures.takeSample(false,1).foreach {case (productId, array) => print(productId + " "); print(array.mkString(" ") + "\n")}
 
-    // The predict method takes (userId, productId) and returns a Rating. It ignores the original rating value.
+    // The predict method takes (userId, productId) and returns a Rating.
     val predictions: RDD[Rating] = model.predict(test.map(x => (x.user, x.product)))
     println("\nSample of predictions RDD records (productId, userId, rating):")
     predictions.takeSample(false,1).foreach(println)
