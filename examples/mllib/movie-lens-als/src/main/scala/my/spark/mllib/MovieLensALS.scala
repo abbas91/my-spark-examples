@@ -23,7 +23,8 @@ object MovieLensALS {
     val sc = new SparkContext()
 
     // Each record in the ratings RDD is a Rating (user, product, rating).
-    val ratings = sc.textFile(ratingsFile).map {line => val fields = line.split("\t"); Rating(fields(0).toInt,fields(1).toInt,fields(2).toDouble)}.cache()
+    val ratings = sc.textFile(ratingsFile).map(_.split("\t")).map(f => Rating(f(0).toInt,f(1).toInt,f(2).toDouble)).cache()
+    // val ratings = sc.textFile(ratingsFile).map {line => val fields = line.split("\t"); Rating(fields(0).toInt,fields(1).toInt,fields(2).toDouble)}.cache()
     println(s"\nMovies:            " + ratings.map(_.product).distinct().count())
     println(s"Users:             " + ratings.map(_.user).distinct().count())
     println(s"Total Ratings:     " + ratings.count())
