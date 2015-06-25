@@ -41,7 +41,8 @@ object RequestCountState {
   }
 
   def updateState(newCounts: Seq[Int], state: Option[Int]): Option[Int] = {
-    val newCount = newCounts.foldLeft(0)(_ + _)
+    // val newCount = newCounts.foldLeft(0)(_ + _)
+    val newCount = newCounts.sum
     val previousCount = state.getOrElse(0)
     Some(newCount + previousCount)
   }
