@@ -1,1 +1,0 @@
-<p><a href="http://hagenhaus.com/pages/apache-spark.html#hagenhaus-example-applications">Click this link</a> for instructions about compiling and running the example applications.</p>
