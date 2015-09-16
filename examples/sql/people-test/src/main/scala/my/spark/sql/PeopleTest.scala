@@ -18,9 +18,14 @@ object PeopleTest {
 
     import sqlContext.implicits._
     
-    val people = sc.textFile(args(0)).map(_.split(",")).map(f => Person(f(0)toInt,f(1),f(2),f(3),f(4),f(5)))
+    val people = (sc
+      .textFile(args(0))
+      .map(_.split(","))
+      .filter(_(0) forall Character.isDigit)
+      .map(f => Person(f(0)toInt,f(1),f(2),f(3),f(4),f(5))))
+
     people.toDF().registerTempTable("people")
-    
+
     println("select * from people limit 5")
     sqlContext.sql("select * from people limit 5").collect().foreach(println)
     
